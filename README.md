@@ -50,13 +50,13 @@ If you already have a project in STM32CubeIDE and just want to use the MIDI clas
 2. Using the Device Configuration Tool, in the Connectivity category, select `USB_OTG_FS` and set it to `Device_Only` mode. In NVIC Settings, enable the USB interface interrupt.
 3. In the Middleware and Software Packs category, select `USB_DEVICE` and choose a Class For FS IP. I chose `Custom Human Interface Device Class (HID)`. I believe that other classes can be chosen, as they will not be used. The MIDI class will be added manually in the sequence, so we'll baypass the class chosen here. In the `Parameter Settings` fields you can configure the number of interfaces (I've left the default value) and in Device Descriptor you can change the manufacturer, product and configuration strings.
 4. Check the Clock Configuration in the Device Configuration Tool. The USB device requires a 48MHz clock. If you use an **STM32F401 with a 25MHz cristal oscillator** you can use the following clock configuration values:
- 5. PLL Source MUX: HSE
- 1. PLL / M: 25
- 2. PLL * N: 336
- 3. PLL / P: 4
- 4. PLL / Q: 7
- 5. System Clock MUX: PLLCLK
- 5. AHB Prescaler = 1
+    5. PLL Source MUX: HSE
+    1. PLL / M: 25
+    2. PLL * N: 336
+    3. PLL / P: 4
+    4. PLL / Q: 7
+    5. System Clock MUX: PLLCLK
+    5. AHB Prescaler = 1
 5. Generate the code and save.
 4. Copy the MIDI folder in `Middlewares/ST/STM32_USB_Device_Library/Class` to the respective folder in your project.
 5. Add the `Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc` folder to the list of includes in your project's properties.
